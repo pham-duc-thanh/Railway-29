@@ -80,18 +80,14 @@ CREATE VIEW v_maxnv AS
 SELECT * FROM v_maxnv;
 
 #5)Question 5: Tạo view có chứa tất các các câu hỏi do user họ TRAN  tạo
-/*SELECT * FROM `Account`;
-SELECT * FROM `Question`;*/
+SELECT * FROM `Account`;
+SELECT * FROM `Question`;
 
 
-DROP VIEW IF EXISTS v_TRANtao;
-CREATE VIEW v_TRANtao AS
-	SELECT A.Username,A.FullName,Q.Content FROM 
-	`Account` A
-	JOIN Question Q 
-	ON A.AccountID=Q.CreatorID
-	WHERE A.FullName LIKE 'TRAN%';
-    
-SELECT * FROM v_TRANtao;
+SELECT A.Username,A.FullName,Q.Content FROM 
+`Account` A
+JOIN Question Q 
+ON A.AccountID=Q.CreatorID
+WHERE A.FullName LIKE 'TRAN%';
 
 -- 
